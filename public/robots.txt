@@ -3,5 +3,3 @@ Disallow: /admin/
 Disallow: /login/
 Disallow: /register/
 Allow: /
-
-Sitemap: https://official-trivex.xyz/sitemap.xml
