@@ -4,4 +4,4 @@ Disallow: /login/
 Disallow: /register/
 Allow: /
 
-Sitemap: https://www.trivex.com/sitemap.xml
+Sitemap: https://official-trivex.xyz/sitemap.xml
