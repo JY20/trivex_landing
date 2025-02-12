@@ -1,56 +1,105 @@
 import React, { useState } from 'react';
-import { Grid, Box, Typography, Button, TextField, Paper } from '@mui/material';
+import { Grid, Box, Typography, Paper } from '@mui/material';
 import Header from '../components/Header';
-// import axios from 'axios';
 
 const MainPage = () => {
-    const [formData, setFormData] = useState({
-        email: '',
-        wallet: '',
-        message: '',
-    });
-    const host = "localhost:8080";
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({
-            ...prevData,
-            [name]: value
-        }));
-    };
-
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         const response = await axios.post(`http://${host}/add_request`, formData);
-
-    //         const result = response.data.status;
-    
-    //         if (result === "Success") {
-    //             alert("Whitelist request has been submitted successfully");
-    //         }
-    //     } catch (error) {
-    //         console.error(error);
-    //         alert(`Error had occurred in submitting whitelist request: ${error}`);
-    //     }
-    // };
 
     return (
-        <Box sx={{ fontFamily: 'Arial, sans-serif', backgroundColor: '#D1C4E9', minHeight: '100vh', width: '100%'}}>
+        <Box sx={{ fontFamily: 'Arial, sans-serif', backgroundColor: '#D1C4E9', minHeight: '100vh', width: '100%' }}>
             <Header />
+
+            {/* About Us Section */}
             <section style={{
-                padding: '50px 30px',
+                padding: '30px 30px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexDirection: 'column',
+                marginBottom: '30px',
+                width: '70%', // Adjusted width to 70%
+                marginLeft: 'auto', // To center it horizontally
+                marginRight: 'auto' // To center it horizontally
+            }}>
+                <Paper sx={{
+                    padding: '30px',
+                    textAlign: 'center',
+                    backgroundColor: '#fff',
+                    borderRadius: '12px',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+                    transition: 'transform 0.3s',
+                    '&:hover': { transform: 'translateY(-10px)' }
+                }}>
+                    <Typography variant="h4" sx={{ textAlign: 'center', marginBottom: '30px', color: '#000' }}>
+                        About Us
+                    </Typography>
+                    <Typography sx={{ color: '#000', textAlign: 'center', marginBottom: '40px' }}>
+                        Trivex is an all-in-one RWA trading platform that connects crypto and stock markets, offering seamless trades between real-world assets. We bridge the gap between traditional financial markets and blockchain technology, empowering users to trade with confidence and transparency. Our platform supports all companies listed in the S&P 500 and TSX, as well as a variety of cryptocurrencies.
+                    </Typography>
+                </Paper>
+            </section>
+
+            {/* Vision Section */}
+            <section style={{
+                padding: '30px 30px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexDirection: 'column',
+                marginBottom: '30px',
+                width: '70%', // Adjusted width to 70%
+                marginLeft: 'auto', // To center it horizontally
+                marginRight: 'auto' // To center it horizontally
+            }}>
+                <Paper sx={{
+                    padding: '30px',
+                    textAlign: 'center',
+                    backgroundColor: '#fff',
+                    borderRadius: '12px',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+                    transition: 'transform 0.3s',
+                    '&:hover': { transform: 'translateY(-10px)' }
+                }}>
+                    <Typography variant="h4" sx={{ textAlign: 'center', marginBottom: '30px', color: '#000' }}>
+                        Our Vision
+                    </Typography>
+                    <Typography sx={{ color: '#000', textAlign: 'center', marginBottom: '40px' }}>
+                        Trivex aims to address the growing gap in the cryptocurrency space where investors face limited opportunities to invest in real value-driven projects. As the hype around speculative projects rises, long-term, impactful ventures are often overlooked. Trivex seeks to revitalize value investing by introducing real-world asset (RWA) trading within the crypto ecosystem, allowing users to invest in tangible, sustainable projects with long-term growth potential.
+                    </Typography>
+                </Paper>
+            </section>
+
+            {/* Features Section */}
+            <section style={{
+                padding: '30px 30px',
                 width: '66%',
-                display: 'flex',            // Flexbox to center content
-                justifyContent: 'center',  // Center horizontally
-                alignItems: 'center',      // Center vertically
-                flexDirection: 'column',   // Align content vertically (if needed)
-                margin: '0 auto',          // Center the section itself
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexDirection: 'column',
+                margin: '0 auto',
+                paddingBottom: '50px'
             }}>
                 <Typography variant="h4" sx={{ textAlign: 'center', marginBottom: '30px', color: 'black' }}>
                     Features
                 </Typography>
-                <Grid container spacing={4} justifyContent="center" alignItems="center">
+                <Grid container spacing={4} justifyContent="center" alignItems="center" sx={{ paddingBottom: '30px' }}>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Paper sx={{
+                            padding: '30px',
+                            textAlign: 'center',
+                            backgroundColor: '#fff',
+                            borderRadius: '12px',
+                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+                            transition: 'transform 0.3s',
+                            '&:hover': { transform: 'translateY(-10px)' }
+                        }}>
+                            <i className="fas fa-cogs" style={{ fontSize: '3em', color: '#F39C12', marginBottom: '20px' }}></i>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: '10px' }}>All-in-One Platform</Typography>
+                            <Typography sx={{ color: '#555' }}>
+                                A comprehensive solution for crypto and stock trading, offering seamless integration with real-world assets.
+                            </Typography>
+                        </Paper>
+                    </Grid>
                     <Grid item xs={12} sm={6} md={4}>
                         <Paper sx={{
                             padding: '30px',
@@ -62,9 +111,9 @@ const MainPage = () => {
                             '&:hover': { transform: 'translateY(-10px)' }
                         }}>
                             <i className="fas fa-chart-line" style={{ fontSize: '3em', color: '#2980B9', marginBottom: '20px' }}></i>
-                            <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: '10px' }}>Algo Report/Calculator</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: '10px' }}>Strategy Analysis</Typography>
                             <Typography sx={{ color: '#555' }}>
-                                Generate real-time reports for crypto and stocks with advanced algorithms for in-depth analysis.
+                                Run real-time AI-powered strategies and generate comprehensive reports for crypto and stocks.
                             </Typography>
                         </Paper>
                     </Grid>
@@ -79,76 +128,16 @@ const MainPage = () => {
                             '&:hover': { transform: 'translateY(-10px)' }
                         }}>
                             <i className="fas fa-exchange-alt" style={{ fontSize: '3em', color: '#27AE60', marginBottom: '20px' }}></i>
-                            <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: '10px' }}> 
-                                Low-Fee Trading</Typography>
-                            <Typography sx={{ color: '#555' }}>
-                                Access an affordable and efficient trading experience with minimal fees and maximum benefits.
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: '10px' }}>
+                                Low-Fee Trading
                             </Typography>
-                        </Paper>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
-                        <Paper sx={{
-                            padding: '30px',
-                            textAlign: 'center',
-                            backgroundColor: '#fff',
-                            borderRadius: '12px',
-                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
-                            transition: 'transform 0.3s',
-                            '&:hover': { transform: 'translateY(-10px)' }
-                        }}>
-                            <i className="fas fa-cogs" style={{ fontSize: '3em', color: '#F39C12', marginBottom: '20px' }}></i>
-                            <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: '10px' }}>All-in-One Platform</Typography>
                             <Typography sx={{ color: '#555' }}>
-                                A complete solution for all your crypto and stock trading needs, with powerful tools and seamless integration.
+                                Enjoy minimal trading fees for maximum profits, with seamless trades between crypto and real-world assets.
                             </Typography>
                         </Paper>
                     </Grid>
                 </Grid>
             </section>
-            
-            {/* <section style={{ padding: '50px 30px' }}>
-                <Typography variant="h4" sx={{ color: 'black', textAlign: 'center', marginBottom: '30px' }}>
-                    Request Access
-                </Typography>
-                <form onSubmit={handleSubmit}>
-                    <Box sx={{
-                        maxWidth: '600px', margin: '0 auto', background: '#fff', padding: '30px', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
-                    }}>
-                        <TextField
-                            label="Email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            fullWidth
-                            required
-                            sx={{ marginBottom: '20px' }}
-                        />
-                        <TextField
-                            label="Wallet"
-                            name="wallet"
-                            value={formData.wallet}
-                            onChange={handleInputChange}
-                            fullWidth
-                            required
-                            sx={{ marginBottom: '20px' }}
-                        />
-                        <TextField
-                            label="Message"
-                            name="message"
-                            value={formData.message}
-                            onChange={handleInputChange}
-                            fullWidth
-                            required
-                            multiline
-                            rows={4}
-                            sx={{ marginBottom: '20px' }}
-                        />
-                        <Button type="submit" fullWidth variant="contained" sx={{ backgroundColor: '#7E57C2' }}>
-                            Submit
-                        </Button>
-                    </Box>
-                </form>
-            </section> */}
         </Box>
     );
 };

@@ -33,7 +33,8 @@ const Header = () => {
                     Welcome to Trivex
                 </Typography>
                 <Typography variant="h6" sx={{ color: 'black' }}>
-                    Your go-to platform for real world assets trading and analysis, plus low-fee trading.
+                    The one-stop platform for seamless 
+                    trading of crypto and real world assets with real-time insights
                 </Typography>
             </ContentBox>
             
