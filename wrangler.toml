@@ -1,6 +1,4 @@
 name = "react-app"
-type = "javascript"
-pages_build_output_dir = "./build
 
 [vars]
-CI = "false"
+CI = false
