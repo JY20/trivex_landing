@@ -1,6 +1,6 @@
 name = "react-app"
 type = "javascript"
-assets = { directory = "build" }
+pages_build_output_dir = "./.vercel/output"
 
 [vars]
-CI = "true"
+CI = "false"
