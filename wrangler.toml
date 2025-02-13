@@ -1,0 +1,6 @@
+name = "react-app"
+type = "javascript"
+assets = { directory = "build" }
+
+[vars]
+CI = "true"
