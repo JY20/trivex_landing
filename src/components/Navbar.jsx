@@ -1,103 +1,97 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, CssBaseline, ThemeProvider, createTheme, Button, Box } from '@mui/material';
+import React, { useState } from 'react';
+import {
+    AppBar,
+    Toolbar,
+    Box,
+    Typography,
+    styled,
+    Drawer,
+    IconButton,
+    Button
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../assets/logo5.png';
 
-const theme = createTheme({
-    palette: {
-        primary: {
-            main: '#D1C4E9', 
-        },
-        background: {
-            default: '#D1C4E9',
-        },
-    },
-    typography: {
-        fontFamily: 'Roboto, Arial, sans-serif',
-        h6: {
-            fontWeight: 600,
-        },
-    },
+const StyledToolbar = styled(Toolbar)({
+    display: 'flex',
+    justifyContent: 'center',
 });
 
+const NavbarContainer = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '80%',
+    backgroundColor: 'white',
+    borderRadius: '30px',
+    padding: '8px 20px',
+    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+    [theme.breakpoints.down("sm")]: {
+        width: '90%', // Slightly smaller on mobile for better spacing
+        padding: '6px 15px'
+    }
+}));
+
 const Navbar = () => {
+    const [openDrawer, setOpenDrawer] = useState(false);
 
     return (
-        <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <AppBar position="static" color="white" sx={{ boxShadow: 0, padding: '10px 0' }}>
-                <Toolbar sx={{ justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            width: '80%', 
-                            backgroundColor: 'white',
-                            borderRadius: '30px',
-                            padding: '8px 20px',
-                            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
-                            alignItems: 'center', 
-                        }}
-                    >
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '16px',
-                        }}
-                    >
-                        <Typography
-                            variant="h6"
-                            to="/"
-                            sx={{
-                                textDecoration: 'none',
-                                color: '#7E57C2',
-                                fontWeight: 'bold',
-                                display: 'flex',
-                                alignItems: 'center',
-                                transition: 'transform 0.3s ease',
-                                '&:hover': { color: '#6A4BA1' },
-                            }}
-                        >
-                            <img
-                                src={logo}
-                                alt="Trivex Logo"
-                                style={{
-                                    width: '30px',
-                                    height: '30px',
-                                    borderRadius: '50%',
-                                    marginRight: '10px',
-                                }}
-                            />
-                            Trivex 
-                        </Typography>
+        <AppBar component="nav" position="sticky" sx={{ backgroundColor: '#D1C4E9', color: '#060f5e' }} elevation={0}>
+            <StyledToolbar>
+                <NavbarContainer sx={{width: '80%', background: 'white'}}>
+                    {/* Logo */}
+                    <Typography variant="h6" component="h2" sx={{ display: 'flex', alignItems: 'center' }}>
+                        <img src={logo} alt="Trivex Logo" style={{ width: "30px", height: "30px", borderRadius: '50%', marginRight: '10px' }} />
+                        Trivex
+                    </Typography>
+
+                    {/* Mobile Menu Icon */}
+                    <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
+                        <IconButton onClick={() => setOpenDrawer(true)}>
+                            <MenuIcon sx={{ color: '#060f5e' }} />
+                        </IconButton>
                     </Box>
 
-                        <Box
+                    {/* Desktop "Coming Soon" Button */}
+                    <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                        <Button
+                            variant="contained"
                             sx={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'space-between',
-                                gap: '16px',
+                                backgroundColor: '#7E57C2',
+                                color: 'white',
+                                fontWeight: 'bold',
+                                borderRadius: '30px',
+                                padding: '10px 20px',
+                                '&:hover': { backgroundColor: '#6A4BA1' },
                             }}
+                            onClick={() => alert('Coming Soon! Stay tuned.')}
                         >
-                            <Button
-                                variant="contained"
-                                sx={{
-                                    backgroundColor: '#7E57C2',
-                                    color: 'white',
-                                    fontWeight: 'bold',
-                                    borderRadius: '30px',
-                                    padding: '10px 20px',
-                                    '&:hover': { backgroundColor: '#6A4BA1' },
-                                }}
-                            >
-                                Coming Soon
-                            </Button>
-                        </Box>
+                            Coming Soon
+                        </Button>
                     </Box>
-                </Toolbar>
-            </AppBar>
-        </ThemeProvider>
+                </NavbarContainer>
+            </StyledToolbar>
+
+            {/* Mobile Drawer */}
+            <Drawer anchor="right" open={openDrawer} onClose={() => setOpenDrawer(false)}>
+                <Box sx={{ width: 250, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 2 }}>
+                    <Button
+                        variant="contained"
+                        sx={{
+                            backgroundColor: '#7E57C2',
+                            color: 'white',
+                            fontWeight: 'bold',
+                            borderRadius: '30px',
+                            padding: '10px 20px',
+                            '&:hover': { backgroundColor: '#6A4BA1' },
+                        }}
+                        onClick={() => alert('Coming Soon! Stay tuned.')}
+                    >
+                        Coming Soon
+                    </Button>
+                </Box>
+            </Drawer>
+        </AppBar>
     );
 };
 

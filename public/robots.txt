@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
-Disallow: /register/
-Allow: /
+Disallow: 
+
+Sitemap: https://official-trivex.xyz/sitemap.xml
