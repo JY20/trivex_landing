@@ -113,7 +113,7 @@ const MainPage = () => {
                             <i className="fas fa-chart-line" style={{ fontSize: '3em', color: '#2980B9', marginBottom: '20px' }}></i>
                             <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: '10px' }}>Strategy Analysis</Typography>
                             <Typography sx={{ color: '#555' }}>
-                                Run real-time AI-powered strategies and generate comprehensive reports for crypto and stocks.
+                                Run real-time algo/AI powered strategies and generate comprehensive reports for crypto and stocks.
                             </Typography>
                         </Paper>
                     </Grid>
