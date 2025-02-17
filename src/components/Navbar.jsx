@@ -40,7 +40,18 @@ const Navbar = () => {
             <StyledToolbar>
                 <NavbarContainer sx={{width: '80%', background: 'white'}}>
                     {/* Logo */}
-                    <Typography variant="h6" component="h2" sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Typography 
+                        variant="h6" 
+                        component="h2" 
+                        sx={{
+                                textDecoration: 'none',
+                                color: '#7E57C2',
+                                fontWeight: 'bold',
+                                display: 'flex',
+                                alignItems: 'center',
+                                transition: 'transform 0.3s ease',
+                                '&:hover': { color: '#6A4BA1' },
+                            }}>
                         <img src={logo} alt="Trivex Logo" style={{ width: "30px", height: "30px", borderRadius: '50%', marginRight: '10px' }} />
                         Trivex
                     </Typography>
