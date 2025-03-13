@@ -24,10 +24,10 @@ const NavbarContainer = styled(Box)(({ theme }) => ({
     width: '80%',
     backgroundColor: 'white',
     borderRadius: '30px',
-    padding: '8px 20px',
+    padding: '6px 10px',
     boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
     [theme.breakpoints.down("sm")]: {
-        width: '90%', // Slightly smaller on mobile for better spacing
+        width: '90%',
         padding: '6px 15px'
     }
 }));
@@ -38,21 +38,23 @@ const Navbar = () => {
     return (
         <AppBar component="nav" position="sticky" sx={{ backgroundColor: '#D1C4E9', color: '#060f5e' }} elevation={0}>
             <StyledToolbar>
-                <NavbarContainer sx={{width: '80%', background: 'white'}}>
+                <NavbarContainer sx={{ width: '80%', background: 'white' }}>
                     {/* Logo */}
-                    <Typography 
-                        variant="h6" 
-                        component="h2" 
+                    <Typography
+                        variant="h6"
+                        component="h2"
                         sx={{
-                                textDecoration: 'none',
-                                color: '#7E57C2',
-                                fontWeight: 'bold',
-                                display: 'flex',
-                                alignItems: 'center',
-                                transition: 'transform 0.3s ease',
-                                '&:hover': { color: '#6A4BA1' },
-                            }}>
-                        <img src={logo} alt="Trivex Logo" style={{ width: "30px", height: "30px", borderRadius: '50%', marginRight: '10px' }} />
+                            textDecoration: 'none',
+                            color: '#7E57C2',
+                            fontWeight: 'bold',
+                            display: 'flex',
+                            alignItems: 'center',
+                            typography: 'h6',
+                            transition: 'transform 0.3s ease',
+                            '&:hover': { color: '#6A4BA1' },
+                        }}
+                    >
+                        <img src={logo} alt="Trivex Logo" style={{ width: "40px", height: "40px", borderRadius: '50%', marginRight: '10px' }} />
                         Trivex
                     </Typography>
 
@@ -63,8 +65,21 @@ const Navbar = () => {
                         </IconButton>
                     </Box>
 
-                    {/* Desktop "Coming Soon" Button */}
-                    <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                    {/* Desktop Links */}
+                    <Box sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: 'center' }}>
+                        <Button
+                            variant="text"
+                            href="https://trivex.gitbook.io/trivex-docs"
+                            sx={{
+                                color: '#7E57C2',
+                                fontWeight: 'bold',
+                                textTransform: 'none',
+                                typography: 'h6',
+                                '&:hover': { color: '#6A4BA1' }
+                            }}
+                        >
+                            Docs
+                        </Button>
                         <Button
                             variant="contained"
                             sx={{
@@ -72,7 +87,9 @@ const Navbar = () => {
                                 color: 'white',
                                 fontWeight: 'bold',
                                 borderRadius: '30px',
-                                padding: '10px 20px',
+                                ml: 2,
+                                textTransform: 'none', 
+                                typography: 'h6',
                                 '&:hover': { backgroundColor: '#6A4BA1' },
                             }}
                             onClick={() => alert('Coming Soon! Stay tuned.')}
@@ -87,13 +104,26 @@ const Navbar = () => {
             <Drawer anchor="right" open={openDrawer} onClose={() => setOpenDrawer(false)}>
                 <Box sx={{ width: 250, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 2 }}>
                     <Button
+                        variant="text"
+                        href="https://trivex.gitbook.io/trivex-docs"
+                        sx={{
+                            color: '#7E57C2',
+                            fontWeight: 'bold',
+                            mb: 2,
+                            textTransform: 'none', 
+                            '&:hover': { color: '#6A4BA1' }
+                        }}
+                    >
+                        Docs
+                    </Button>
+                    <Button
                         variant="contained"
                         sx={{
                             backgroundColor: '#7E57C2',
                             color: 'white',
                             fontWeight: 'bold',
                             borderRadius: '30px',
-                            padding: '10px 20px',
+                            textTransform: 'none', 
                             '&:hover': { backgroundColor: '#6A4BA1' },
                         }}
                         onClick={() => alert('Coming Soon! Stay tuned.')}
