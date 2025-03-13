@@ -36,10 +36,8 @@ const Footer = () => {
               </svg>
             </a>
 
-            <a target="_blank" rel="noreferrer noopener" href="" aria-label="">
-              <svg viewBox="0 0 20 20" width="3vh" height="3vh" color="textSubtle" xmlns="http://www.w3.org/2000/svg">
-              </svg>
-            </a>
+            <svg viewBox="0 0 20 20" width="3vh" height="3vh" color="textSubtle" xmlns="http://www.w3.org/2000/svg">
+            </svg>
 
             <a target="_blank" rel="noreferrer noopener" href="https://discord.gg/MQntXHf6" aria-label="Discord">
               <svg viewBox="0 0 20 20" width="3vh" height="3vh" color="textSubtle" xmlns="http://www.w3.org/2000/svg">
@@ -47,10 +45,8 @@ const Footer = () => {
               </svg>
             </a>
 
-            <a target="_blank" rel="noreferrer noopener" href="" aria-label="">
-              <svg viewBox="0 0 20 20" width="3vh" height="3vh" color="textSubtle" xmlns="http://www.w3.org/2000/svg">
-              </svg>
-            </a>
+            <svg viewBox="0 0 20 20" width="3vh" height="3vh" color="textSubtle" xmlns="http://www.w3.org/2000/svg">
+            </svg>
 
             <a target="_blank" rel="noreferrer noopener" href="https://t.me/trivexxyz" aria-label="Telegram">
               <svg viewBox="0 0 20 20" width="3vh" height="3vh" color="textSubtle" xmlns="http://www.w3.org/2000/svg">
