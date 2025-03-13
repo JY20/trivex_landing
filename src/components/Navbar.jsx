@@ -124,6 +124,7 @@ const Navbar = () => {
                             fontWeight: 'bold',
                             borderRadius: '30px',
                             textTransform: 'none', 
+                            padding: '10px 20px',
                             '&:hover': { backgroundColor: '#6A4BA1' },
                         }}
                         onClick={() => alert('Coming Soon! Stay tuned.')}
