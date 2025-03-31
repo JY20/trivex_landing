@@ -10,7 +10,7 @@ import {
     Button
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import logo from '../assets/logo5.png';
+import logo from '../assets/Trivex1.png';
 
 const StyledToolbar = styled(Toolbar)({
     display: 'flex',
