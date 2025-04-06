@@ -45,7 +45,7 @@ const Header = () => {
                     Welcome to Trivex
                 </Typography>
                 <Typography variant="h6" sx={{ color: 'black' }}>
-                    The one-stop platform for seamless trading of crypto and real-world assets with real-time insights
+                    The ultimate DApp empowering every trade on Starknet
                 </Typography>
             </ContentBox>
             
@@ -55,7 +55,7 @@ const Header = () => {
                     src={layer}
                     alt="Trivex Logo"
                     style={{
-                        width: '100%',
+                        width: '80%',
                         height: 'auto',
                         transition: 'transform 0.3s ease',
                     }}
