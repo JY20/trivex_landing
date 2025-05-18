@@ -1,0 +1,16 @@
+{
+  "short_name": "Trivex",
+  "name": "Trivex | The Ultimate DApp for Trading on Starknet",
+  "description": "Trade, earn, and build with unmatched speed and security on Starknet's leading DeFi platform",
+  "icons": [
+    {
+      "src": "trivex_round.png",
+      "sizes": "495x495",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#7E57C2",
+  "background_color": "#1E0538"
+} 

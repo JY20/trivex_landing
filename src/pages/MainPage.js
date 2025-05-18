@@ -78,6 +78,9 @@ const MainPage = () => {
             </Container>
             */}
 
+            {/* Spacer for better visual separation */}
+            <Box sx={{ height: '80px' }} />
+
             {/* About Us Section */}
             <Container maxWidth="lg" sx={{ mb: 10 }}>
                 <Grid container spacing={6} justifyContent="center" alignItems="center" className="animate-on-scroll" sx={fadeInUp}>
