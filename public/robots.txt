@@ -1,4 +1,6 @@
+# Allow all web crawlers
 User-agent: *
-Disallow: 
+Allow: /
 
+# Sitemap location
 Sitemap: https://official-trivex.xyz/sitemap.xml
